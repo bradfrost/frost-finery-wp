@@ -3,7 +3,7 @@
 
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 		<?php include (TEMPLATEPATH . '/includes/block-hero.php');  ?>
-		<div class="g g-max4">
+		<div class="g g-max4 collection-list">
 			<?php 
 				if( have_rows('collection') ):
 				while ( have_rows('collection') ) : the_row(); 
