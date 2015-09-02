@@ -129,5 +129,48 @@
 			esc_attr( get_the_author() )
 		);
 	}
+	
+	/*Add Events Post Type*/
+	register_post_type('events', array(
+		'labels' => array(
+	       'name'          => __('Events'),
+	       'singular_label' => __('Event'),
+			'add_new' => 'Add New',
+		    'add_new_item' =>'Add New',
+		    'edit' => 'Edit',
+		    'edit_new_item' => 'Edits',
+		    'rewrite' => array("slug" => "events")
+	    ),
+		'public' => true,
+		'show_ui' => true,
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'rewrite' => false,
+		'query_var' => false,
+		'taxonomies' => array('post_tag','category'),
+		'supports' => array('title', 'tags', 'editor', 'thumbnail','custom-fields')
+	));
+	
+		/*Add Shops Post Type*/
+	register_post_type('shops', array(
+		'labels' => array(
+	       'name'          => __('Shops'),
+	       'singular_label' => __('Shop'),
+			'add_new' => 'Add New',
+		    'add_new_item' =>'Add New',
+		    'edit' => 'Edit',
+		    'edit_new_item' => 'Edits',
+		    'rewrite' => array("slug" => "shops")
+	    ),
+		'public' => true,
+		'show_ui' => true,
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'rewrite' => false,
+		'query_var' => false,
+		'taxonomies' => array('post_tag','category'),
+		'supports' => array('title', 'tags', 'editor', 'thumbnail','custom-fields')
+	));
+
 
 ?>
