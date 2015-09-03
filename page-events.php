@@ -26,7 +26,7 @@
 		
 <!--End Upcoming Events-->
 
-<hr />
+	<hr class="hr-short" />
 	        	
 <!--Past Events-->
 		<h2 class="alpha section-heading">Past Events</h2>
