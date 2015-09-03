@@ -172,5 +172,26 @@
 		'supports' => array('title', 'tags', 'editor', 'thumbnail','custom-fields')
 	));
 
+		/*Add Jewelry Post Type*/
+	register_post_type('jewelry', array(
+		'labels' => array(
+	       'name'          => __('Jewelry'),
+	       'singular_label' => __('Jewelry'),
+			'add_new' => 'Add New',
+		    'add_new_item' =>'Add New',
+		    'edit' => 'Edit',
+		    'edit_new_item' => 'Edits',
+		    'rewrite' => array("slug" => "jewelry")
+	    ),
+		'public' => true,
+		'show_ui' => true,
+		'capability_type' => 'post',
+		'hierarchical' => false,
+		'rewrite' => false,
+		'query_var' => false,
+		'taxonomies' => array('post_tag','category'),
+		'supports' => array('title', 'tags', 'editor', 'thumbnail','custom-fields')
+	));	
+
 
 ?>
