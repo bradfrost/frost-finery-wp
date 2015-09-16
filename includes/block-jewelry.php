@@ -25,10 +25,15 @@
 	</div>
 	<div class="jewelry-panel" id="<?php get_the_ID(); ?>">
 		<div class="jewelry-panel-image">
-				<?php if( have_rows('image') ): // check if the repeater field has rows of data
-					while ( have_rows('image') ) : the_row(); // loop through the rows of data ?>
-						<img src='<?php echo get_sub_field('image')['url']; ?>'>
-				<?php endwhile; endif; ?>
+				<?php if( have_rows('image') ): // check if the repeater field has rows of data ?>
+					<div class="jewelry-gallery">
+						<ul>
+					<?php while ( have_rows('image') ) : the_row(); // loop through the rows of data ?>
+						<li><img src='<?php echo get_sub_field('image')['url']; ?>'></li>
+				<?php endwhile; ?>
+						</ul>
+					</div>
+				<?php endif; ?>
 		</div>
 		<div class="jewelry-info">
 			<h2 class="alpha">
@@ -45,6 +50,7 @@
 				<li class="retail">
 					Price: $<?php the_field('retail_price'); ?>
 				</li>
+				<?php if (is_user_logged_in() ) : ?>
 				<li class="bom">
 					BOM Price: $<?php the_field('bom_price'); ?>
 				</li>
@@ -53,9 +59,14 @@
 				</li>
 				<li class="sold">
 					# Sold: <?php the_field('number_sold'); ?>
-				</li>
+				</li> <?php endif; ?>
 			</ul>
-			<a href="<?php the_field('jewelry_url'); ?>" class="btn">Buy On Etsy</a>
+			<?php $jewelryurl = get_field('jewelry_url');
+			 if ($jewelryurl): ?> 
+			 	<a href="<?php the_field('jewelry_url'); ?>" class="btn">Buy On Etsy</a>
+		<?php else: ?> 
+				<a href="/contact" class="btn">Request A Custom Order</a>
+		<?php endif; ?> 
 		</div>
 	</div>
 </div>
