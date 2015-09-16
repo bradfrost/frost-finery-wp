@@ -8,12 +8,13 @@
 
 <!--Begin Upcoming Events-->
 	<h2 class="alpha section-heading">Upcoming Events</h2>
+		<?php
+        $args = array( 'numberposts' => -1, 'post_type' => 'events', 'orderby' => 'meta_value_num',
+    'order' => 'ASC' );
+        $myposts = get_posts( $args );
+        if(sizeof($myposts) != 0): ?>
 		<ul class="events-list">
-				 <?php
-		        $args = array( 'numberposts' => -1, 'post_type' => 'events', 'orderby' => 'meta_value_num',
-		    'order' => 'ASC' );
-		        $myposts = get_posts( $args );
-		        foreach ( $myposts as $post ) : setup_postdata( $post );
+		        <?php foreach ( $myposts as $post ) : setup_postdata( $post );
 		       	 $date = get_field('event_start_date');
 			   	 if( strtotime($date) >= strtotime('now') ) : //If event is later than or equal to the current date
 	        ?>
@@ -23,6 +24,11 @@
 				<?php endif; //end future date conditional
 			endforeach; //end loop most ?>
 		</ul>
+		<?php else: ?>
+		<div>
+			No upcoming events right now
+		</div>
+		<?php endif; ?>
 		
 <!--End Upcoming Events-->
 
