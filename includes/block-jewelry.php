@@ -41,16 +41,32 @@
 			</h2>
 			<p><?php the_field('description'); ?></p>
 			<ul>
-				<li class="type">
-					Type: <?php the_field('type'); ?>
-				</li>
 				<li class="material">
-					Material: <?php the_field('material'); ?>
+					Material:				
+					<?php 
+					$field = get_field_object('material');
+					$value = $field['value'];
+					$choices = $field['choices'];
+					$choicesselected = array();
+
+					
+					if( $value ): ?>
+
+						<?php foreach( $value as $v ): ?>
+							<?php array_push($choicesselected, $choices[ $v ]); ?>
+						<?php endforeach; ?>
+						<?php $choicesseparator = implode(", ", $choicesselected); ?>
+						<?php echo $choicesseparator; ?>
+
+					<?php endif; ?>
 				</li>
 				<li class="retail">
 					Price: $<?php the_field('retail_price'); ?>
 				</li>
 				<?php if (is_user_logged_in() ) : ?>
+				<li class="type">
+					Type: <?php the_field('type'); ?>
+				</li>
 				<li class="bom">
 					BOM Price: $<?php the_field('bom_price'); ?>
 				</li>
