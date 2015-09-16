@@ -1,13 +1,17 @@
 <div class="block block-hero">
 	<?php 
 		$link = get_field( "hero_link" );
+		if (!$override) {
+			$title = get_field('hero_title');
+			$excerpt = get_field('hero_excerpt');
+		}
 		if( $link ) : 
 	?>
 	<a href="<?php the_field('hero_link'); ?>" class="b-inner">
 	<?php endif; ?>
 		<div class="b-text">
-			<h1 class="b-title"><?php the_field('hero_title'); ?></h1>
-			<p class="b-excerpt"><?php the_field('hero_excerpt'); ?></p>
+			<h1 class="b-title"><?php echo $title; ?></h1>
+			<p class="b-excerpt"><?php echo $excerpt; ?></p>
 		</div>
 		<?php 
 		$value = get_field( "hero_img" );
