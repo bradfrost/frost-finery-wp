@@ -18,8 +18,8 @@
 		</div>
 		<hr class="hr-short" />
 		<?php
-		$title = get_field('custom_work_title');
-		$excerpt = get_field('custom_work_excerpt');
+		$title = get_field('contact_title');
+		$excerpt = get_field('contact_excerpt');
 		$override = true;
 	?>
 		<?php include (TEMPLATEPATH . '/includes/block-hero.php');  ?>
