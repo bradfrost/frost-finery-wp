@@ -23,7 +23,9 @@
 		$override = true;
 	?>
 		<?php include (TEMPLATEPATH . '/includes/block-hero.php');  ?>
-		<?php echo do_shortcode( '[contact-form-7 id="340" title="Request A Custom Order" html_id="custom-order"]' ); ?>
+		<div class="lc-single">
+			<?php echo do_shortcode( '[contact-form-7 id="340" title="Request A Custom Order" html_id="custom-order"]' ); ?>
+		</div>
 	<?php endwhile; endif; ?>
 
 <?php get_footer(); ?>
