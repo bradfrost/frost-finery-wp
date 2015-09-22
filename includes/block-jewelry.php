@@ -1,6 +1,6 @@
 <div class="jewelry-item">
 	<div class="jewelry-image">
-		<a href="#<?php get_the_ID(); ?>">
+		<a href="#<?php the_ID(); ?>">
 			<div class="jewelry-thumb">
 				<?php if( have_rows('image') ): // check if the repeater field has rows of data ?>
 					
@@ -23,7 +23,7 @@
 			</div>
 		</a>
 	</div>
-	<div class="jewelry-panel" id="<?php get_the_ID(); ?>">
+	<div class="jewelry-panel" id="<?php the_ID(); ?>">
 		<div class="jewelry-panel-image">
 				<?php if( have_rows('image') ): // check if the repeater field has rows of data ?>
 					<div class="jewelry-gallery">
