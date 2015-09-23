@@ -1,3 +1,4 @@
+<!-- Begin Mail Chimp Embed Signup -->
 <div class="newsletter-container">
 	<!-- Begin MailChimp Signup Form -->
 	<form action="//bradfrostweb.us5.list-manage.com/subscribe/post?u=6c0c3f4dcd40d88bc1cedb3fa&amp;id=f54f6e842d" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="newsletter inline-form validate" target="_blank" novalidate>
