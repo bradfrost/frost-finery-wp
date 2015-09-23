@@ -6,7 +6,7 @@
 	
 <!--Start Collection-->
 	<?php
-		$args = array( 'numberposts' => -1, 'post_type' => 'jewelry', 'orderby' => 'meta_value_num',
+		$args = array( 'numberposts' => -1, 'post_type' => 'jewelry', 'orderby' => 'menu_order',
     'order' => 'ASC' );
         $myposts = get_posts( $args ); ?>
 	<div class="g g-max4 collection-list">
@@ -31,7 +31,7 @@
 	?>
 	
 	<?php include (TEMPLATEPATH . '/includes/block-hero.php');  
-		$args = array( 'numberposts' => -1, 'post_type' => 'jewelry', 'orderby' => 'meta_value_num',
+		$args = array( 'numberposts' => -1, 'post_type' => 'jewelry', 'orderby' => 'menu_order',
     'order' => 'ASC' );
         $myposts = get_posts( $args ); ?>
 	<div class="g g-max4 collection-list">
@@ -44,6 +44,7 @@
 		endforeach; ?>
 	</div>
 <!-- End Archives -->
+
 	<?php endwhile; endif; //end wordpress loop ?>
 </main><!--End role=main-->
 <?php get_footer(); ?>
