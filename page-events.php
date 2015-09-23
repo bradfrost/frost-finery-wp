@@ -5,12 +5,11 @@
 	        <?php the_content(); ?>
 	    <?php endwhile; endif; ?>
 	</div>
-
+	
 <!--Begin Upcoming Events-->
 	<h2 class="alpha section-heading">Upcoming Events</h2>
 		<?php
-        $args = array( 'numberposts' => -1, 'post_type' => 'events', 'orderby' => 'meta_value_num',
-    'order' => 'ASC' );
+        $args = array( 'numberposts' => -1, 'post_type' => 'events','meta_key' => 'event_start_date', 'orderby' => 'meta_value_num', 'order' => 'ASC' );
         $myposts = get_posts( $args );
         if(sizeof($myposts) != 0): ?>
 		<ul class="events-list">
@@ -28,7 +27,8 @@
 		<div>
 			No upcoming events right now
 		</div>
-		<?php endif; ?>
+		<?php endif;
+		wp_reset_postdata(); ?>
 		
 <!--End Upcoming Events-->
 
@@ -38,8 +38,7 @@
 		<h2 class="alpha section-heading">Past Events</h2>
 	<ul class="events-list">
 		<?php
-	        $args = array( 'numberposts' => -1, 'post_type' => 'events', 'orderby' => 'meta_value_num',
-	    'order' => 'DESC' );
+	        $args = array( 'numberposts' => -1, 'post_type' => 'events', 'meta_key' => 'event_start_date', 'orderby' => 'meta_value_num', 'order' => 'DESC' );
 	        $myposts = get_posts( $args );
 	        foreach ( $myposts as $post ) : setup_postdata( $post ); 
 	
