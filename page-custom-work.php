@@ -12,14 +12,32 @@
 				<div class="text">
 				<?php the_field('page_content'); ?>
 				</div>
+				<a href="/contact/#custom-order" class="btn">Request A Custom Order</a>
 			</div>
 		</div>
-		<hr />
-		<?php include (TEMPLATEPATH . '/includes/section-touts.php');  ?>
-		<?php /*
-		<p class="intro"><?php the_field('blog_intro'); ?></p>
-		<?php include (TEMPLATEPATH . '/includes/button-bar.php');  ?>
-		*/ ?>
+		<hr class="hr-short" />
+		
+	<!-- Start Custom Work Images -->
+		<?php
+		$title = get_field('custom_work_title');
+		$excerpt = get_field('custom_work_excerpt');
+		$override = true;
+	?>
+		<?php include (TEMPLATEPATH . '/includes/block-hero.php');  ?>
+	<?php
+		$args = array( 'numberposts' => -1, 'post_type' => 'jewelry', 'orderby' => 'menu_order',
+    'order' => 'ASC' );
+        $myposts = get_posts( $args ); ?>
+	<div class="g g-max4 collection-list">
+		 <?php foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+			 <?php if (get_field('section') === "custom" ): ?>
+				<div class="gi">
+					<?php include (TEMPLATEPATH . '/includes/block-jewelry.php'); ?>
+				</div>
+				<?php endif;
+		 endforeach; ?>
+	</div>	
+	<!-- End Custom Work Images -->
 	<?php endwhile; endif; ?>
 
 <?php get_footer(); ?>
