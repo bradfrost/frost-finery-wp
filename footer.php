@@ -1,8 +1,9 @@
 </main>
 <footer class="footer" role="contentinfo">
 	<div class="lc">
-		<?php include (TEMPLATEPATH . '/includes/newsletter.php');  ?>
+		<?php include (TEMPLATEPATH . '/includes/next-event-footer.php');  ?>
 		<?php include (TEMPLATEPATH . '/includes/social.php');  ?>
+		<?php include (TEMPLATEPATH . '/includes/newsletter.php');  ?>
 	</div>
 	
 	<nav id="footer-nav" class="footer-nav">
