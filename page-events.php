@@ -38,7 +38,7 @@
 		<h2 class="alpha section-heading">Past Events</h2>
 	<ul class="events-list">
 		<?php
-	        $args = array( 'numberposts' => -1, 'post_type' => 'events', 'meta_key' => 'event_start_date', 'orderby' => 'meta_value_num', 'order' => 'DESC' );
+	        $args = array( 'numberposts' => -1, 'post_type' => 'events', 'meta_key' => 'event_start_date', 'orderby' => 'meta_value_num', 'order' => 'ASC' );
 	        $myposts = get_posts( $args );
 	        foreach ( $myposts as $post ) : setup_postdata( $post ); 
 	
