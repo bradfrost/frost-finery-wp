@@ -38,7 +38,7 @@
 		<h2 class="alpha section-heading">Past Events</h2>
 	<ul class="events-list">
 		<?php
-	        $args = array( 'numberposts' => -1, 'post_type' => 'events', 'meta_key' => 'event_start_date', 'orderby' => 'meta_value_num', 'order' => 'ASC' );
+	        $args = array( 'numberposts' => -1, 'post_type' => 'events', 'meta_key' => 'event_start_date', 'orderby' => 'meta_value_num', 'order' => 'DESC' );
 	        $myposts = get_posts( $args );
 	        foreach ( $myposts as $post ) : setup_postdata( $post ); 
 	
@@ -52,11 +52,10 @@
 		</li>
 		
 		<?php endif; //end previous date conditional
-        endforeach; //end loop most
-        wp_reset_postdata(); 
-        ?>
+        endforeach; //end loop most        ?>
 	</ul>
-	
+	<?php wp_reset_postdata(); ?> 
+
 <!-- End Past Events-->
 
 <?php get_footer(); ?>

@@ -8,7 +8,7 @@
 			<?php the_field('city'); ?>, <?php the_field('state'); ?>
 		</div>
 		<div class="date">
-			 <?php echo date("M", strtotime($date));?> <?php echo date("d", strtotime($date));?><?php if( get_field('event_end_date') ) {echo "-";$endDate = get_field('event_end_date'); echo date("d", strtotime($endDate));}?> <?php echo date("Y", strtotime($date));?>
+			 <?php echo date("M", strtotime($date));?> <?php echo date("d", strtotime($date));?><?php if( get_field('event_end_date') ) {echo "-";$endDate = get_field('event_end_date'); echo date("d", strtotime($endDate));}?> <?php echo date("Y", strtotime($date));?> 
 		</div>
 		<div class="time">
 			<?php the_field('event_time'); ?>
