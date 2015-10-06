@@ -52,7 +52,7 @@
 		<?php endif;
 		wp_reset_postdata(); ?>
 		<div class="event-link">
-			<a href="/events">See All Upcoming Events</a>
+			<a href="/events">See All Events</a>
 		</div>
 	</div>
 		
