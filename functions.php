@@ -22,6 +22,8 @@
 	}
 	add_action( 'after_setup_theme', 'html5reset_setup' );
 	add_image_size( 'jewelry-collection', 400, 400 ); //Collection grid
+	add_image_size( 'jewelry-slideshow', 1024, 1024 ); //Gallery images
+
 
 	// Scripts & Styles (based on twentythirteen: http://make.wordpress.org/core/tag/twentythirteen/)
 	function html5reset_scripts_styles() {
