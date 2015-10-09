@@ -29,7 +29,7 @@
 					<div class="jewelry-gallery">
 						<ul>
 					<?php while ( have_rows('image') ) : the_row(); // loop through the rows of data ?>
-						<li><img src='<?php echo get_sub_field('image')['url']; ?>'></li>
+						<li><img data-src='<?php echo get_sub_field('image')['url']; ?>'></li>
 				<?php endwhile; ?>
 						</ul>
 					</div>
