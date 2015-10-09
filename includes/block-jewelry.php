@@ -27,8 +27,16 @@
 				<?php if( have_rows('image') ): // check if the repeater field has rows of data ?>
 					<div class="jewelry-gallery">
 						<ul>
+						<?php $i = 0; ?>
 					<?php while ( have_rows('image') ) : the_row(); // loop through the rows of data ?>
-						<li><img data-src='<?php echo get_sub_field('image')['url']; ?>'></li>
+					<?php $rows1 = get_field('image');
+						$first_row1 = $rows1[$i];
+						$first_row_image1 = $first_row1['image']['id'];
+						$sizes1 = 'jewelry-slideshow';
+						$link = wp_get_attachment_image_src( $first_row_image1, $sizes1 );
+						?>
+						<li><img data-src='<?php echo $link[0]; ?>'></li>
+						<?php $i++; ?>
 				<?php endwhile; ?>
 						</ul>
 					</div>
