@@ -3,16 +3,15 @@
 		<a href="#<?php the_ID(); ?>">
 			<div class="jewelry-thumb">
 				<?php if( have_rows('image') ): // check if the repeater field has rows of data ?>
-					
 					<?php
 					$rows = get_field('image'); // get all the rows
 					$first_row = $rows[0]; // get the first row
 					$first_row_image = $first_row['image']['id']; // get the sub field value 
-					
+					$size = 'jewelry-collection';
 					// Note
 					// $first_row_image = 123 (image ID)
 					
-					$image = wp_get_attachment_image_src( $first_row_image, 'full' );
+					$image = wp_get_attachment_image_src( $first_row_image, $size );
 					// url = $image[0];
 					// width = $image[1];
 					// height = $image[2];
