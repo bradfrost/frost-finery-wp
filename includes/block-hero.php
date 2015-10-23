@@ -1,11 +1,11 @@
 <div class="block block-hero">
-	<?php 
+	<?php
 		$link = get_field( "hero_link" );
 		if (!$override) {
 			$title = get_field('hero_title');
 			$excerpt = get_field('hero_excerpt');
 		}
-		if( $link ) : 
+		if( $link ) :
 	?>
 	<a href="<?php the_field('hero_link'); ?>" class="b-inner">
 	<?php endif; ?>
@@ -13,15 +13,15 @@
 			<h1 class="b-title"><?php echo $title; ?></h1>
 			<p class="b-excerpt"><?php echo $excerpt; ?></p>
 		</div>
-		<?php 
+		<?php
 		$value = get_field( "hero_img" );
 		if( $value ) : ?>
 		<div class="b-thumb">
-			<?php if( have_rows('hero') ): ?>
+			<?php if( have_rows('hero_img') ): ?>
 			<?php $i = 0; ?>
 					<picture>
-					  <?php while ( have_rows('hero') ) : the_row(); ?>
-						  <?php $rows1 = get_field('hero');
+					  <?php while ( have_rows('hero_img') ) : the_row(); ?>
+						  <?php $rows1 = get_field('hero_img');
 						  $first_row = $rows1[$i];
 						  $first_row_image = $first_row['hero_image']['id'];
 						  $first_row_boundary = $first_row['hero_boundary'];
@@ -38,11 +38,9 @@
 			<?php endif; ?>
 		</div>
 		<?php endif; ?>
-	<?php 
-		if( $link ) : 
+	<?php
+		if( $link ) :
 	?>
 	</a>
 	<?php endif; ?>
 </div>
-
-
