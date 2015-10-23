@@ -1,13 +1,11 @@
 <?php /* Template Name: About */ ?>
 <?php get_header(); ?>
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-
 		<?php include (TEMPLATEPATH . '/includes/block-hero.php');  ?>
 
 		<section>
 			<div class="lc-single">
-				<?php the_field('process_title'); ?>
-
+				<?php the_field('about_copy'); ?>
 			</div>
 		</section>
 		<hr class="hr-short" />
@@ -36,39 +34,26 @@
 		<hr class="hr-short" />
 
 		<section>
-			{{# thanks }}
-			{{> molecules-block-hero-text }}
-			{{/ thanks }}
+			<?php
+				$title = get_field('thanks_title');
+				$excerpt = get_field('thanks_excerpt');
+				$override = true;
+			?>
+
+			<?php include (TEMPLATEPATH . '/includes/block-hero.php');  ?>
+
+			<ul class="col-list" style="text-align: center;">
+				<?php if( have_rows('thanks_item') ): ?>
+				<?php while ( have_rows('thanks_item') ) : the_row(); ?>
+
+					<li>
+						<a href="<?php the_sub_field('thanks_link') ?>"><?php echo the_sub_field('thanks_name'); ?></a>
+					</li>
+
+				<?php endwhile; ?>
+				<?php endif; ?>
+			</ul>
 		</section>
-
-
-
-		<div class="g g-2up">
-			<div class="gi">
-				<?php $image = get_field('about_img'); ?>
-				<img src="<?php echo $image['url'] ?>" alt="<?php echo $image['alt'] ?>">
-			</div>
-			<div class="gi">
-				<h1><?php the_field('about_title'); ?></h1>
-				<div class="text">
-				<?php the_field('about_content'); ?>
-				</div>
-			</div>
-		</div>
-		<div class="g g-2up">
-			<div class="gi">
-				<h2 class="alpha"><?php the_field('process_title'); ?></h2>
-				<div class="text">
-				<?php the_field('process_content'); ?>
-				</div>
-			</div>
-			<div class="gi">
-				<h2 class="alpha"><?php the_field('thanks_title'); ?></h2>
-				<div class="text">
-				<?php the_field('thanks_content'); ?>
-				</div>
-			</div>
-		</div>
 	<?php endwhile; endif; ?>
 
 <?php get_footer(); ?>
