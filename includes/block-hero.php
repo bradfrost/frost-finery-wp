@@ -4,6 +4,7 @@
 		if (!$override) {
 			$title = get_field('hero_title');
 			$excerpt = get_field('hero_excerpt');
+			$heroImg = get_field( 'hero_img' );
 		}
 		if( $link ) :
 	?>
@@ -14,8 +15,7 @@
 			<p class="b-excerpt"><?php echo $excerpt; ?></p>
 		</div>
 		<?php
-		$value = get_field( "hero_img" );
-		if( $value ) : ?>
+		if( $heroImg ) : ?>
 		<div class="b-thumb">
 			<?php if( have_rows('hero_img') ): ?>
 			<?php $i = 0; ?>
@@ -27,7 +27,7 @@
 						  $first_row_boundary = $first_row['hero_boundary'];
 						  $size = 'full';
 						  $image = wp_get_attachment_image_src( $first_row_image, $size ); ?>
-						  <?php if ($i < sizeof($first_row)) : ?>
+						  <?php if ($i < (sizeof(($rows1))-1)) : ?>
 						    <source media="(min-width: <?php echo $first_row_boundary ?>)" srcset="<?php echo $image[0]; ?>">
 						  <?php else : ?>
 						    <img src="<?php echo $image[0]; ?>" alt="hero_image">
