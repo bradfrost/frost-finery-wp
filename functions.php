@@ -23,6 +23,7 @@
 	add_action( 'after_setup_theme', 'html5reset_setup' );
 	add_image_size( 'jewelry-collection', 400, 400 ); //Collection grid
 	add_image_size( 'jewelry-slideshow', 1024, 1024 ); //Gallery images
+	add_image_size ( 'tout-size', 500, 500); //Tout Image Size
 
 
 	// Scripts & Styles (based on twentythirteen: http://make.wordpress.org/core/tag/twentythirteen/)
