@@ -34,6 +34,7 @@
 	<script src="<?php echo get_template_directory_uri(); ?>/js/modernizr.js"></script>	
 	<script src="//use.typekit.net/reh7esz.js"></script>
 	<script>try{Typekit.load();}catch(e){}</script>
+	<script src="<?php echo get_template_directory_uri(); ?>/js/picturefill.min.js"></script>	
 
 	<?php wp_head(); ?>
 
