@@ -44,12 +44,14 @@
 
 			<?php include (TEMPLATEPATH . '/includes/block-hero.php');  ?>
 
-			<ul class="col-list" style="text-align: center;">
+			<ul class="link-list">
 				<?php if( have_rows('thanks_item') ): ?>
 				<?php while ( have_rows('thanks_item') ) : the_row(); ?>
-
+					<?php $link = get_sub_field('thanks_link'); ?>
 					<li>
-						<a href="<?php the_sub_field('thanks_link') ?>"><?php echo the_sub_field('thanks_name'); ?></a>
+						<?php if($link) : ?><a href="<?php echo $link; ?>"><?php endif; ?>
+							<?php echo the_sub_field('thanks_name'); ?>
+						<?php if($link) : ?></a><?php endif; ?>
 					</li>
 
 				<?php endwhile; ?>
