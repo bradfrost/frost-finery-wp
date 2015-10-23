@@ -1,6 +1,7 @@
 <div class="events-list-item">
 	<a href="<?php the_field('event_url'); ?>">
 		<h3><?php the_title(); ?></h3>
+	</a>
 		<div class="location">
 			<?php the_field('event_street'); ?>
 		</div>
@@ -16,5 +17,5 @@
 		<div class="description">
 			<?php the_field('event_description'); ?>
 		</div>
-	</a>
+
 </div>
