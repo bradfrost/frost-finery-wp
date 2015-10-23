@@ -13,6 +13,7 @@
 			<?php
 				$title = get_field('press_title');
 				$excerpt = get_field('press_excerpt');
+				$heroImg = false;
 				$override = true;
 			?>
 
@@ -37,6 +38,7 @@
 			<?php
 				$title = get_field('thanks_title');
 				$excerpt = get_field('thanks_excerpt');
+				$heroImg = false;
 				$override = true;
 			?>
 
