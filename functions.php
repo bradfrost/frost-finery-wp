@@ -72,7 +72,9 @@
 	}
 	add_filter( 'wp_title', 'html5reset_wp_title', 10, 2 );
 
-
+	//Remove Contact Form 7 CSS and JS from all page loads http://contactform7.com/loading-javascript-and-stylesheet-only-when-it-is-necessary/
+	add_filter( 'wpcf7_load_js', '__return_false' );
+	add_filter( 'wpcf7_load_css', '__return_false' );
 
 
 //OLD STUFF BELOW
@@ -133,7 +135,7 @@
 			esc_attr( get_the_author() )
 		);
 	}
-	
+
 	/*Add Events Post Type*/
 	register_post_type('events', array(
 		'labels' => array(
@@ -154,7 +156,7 @@
 		'taxonomies' => array('post_tag','category'),
 		'supports' => array('title', 'tags', 'editor', 'thumbnail','custom-fields')
 	));
-	
+
 		/*Add Shops Post Type*/
 	register_post_type('shops', array(
 		'labels' => array(
@@ -195,7 +197,7 @@
 		'query_var' => false,
 		'taxonomies' => array('post_tag','category'),
 		'supports' => array('title', 'tags', 'editor', 'thumbnail','custom-fields')
-	));	
+	));
 
 
 ?>
