@@ -31,8 +31,8 @@
 		global $wp_styles;
 
 		// Load Comments
-		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
-			wp_enqueue_script( 'comment-reply' );
+		//if ( is_singular() && comments_open() && get_option( 'thread_comments' ) )
+		//	wp_enqueue_script( 'comment-reply' );
 
 		// Load Stylesheets
 //		wp_enqueue_style( 'html5reset-reset', get_template_directory_uri() . '/reset.css' );
@@ -72,23 +72,25 @@
 	}
 	add_filter( 'wp_title', 'html5reset_wp_title', 10, 2 );
 
-
+	//Remove Contact Form 7 CSS and JS from all page loads http://contactform7.com/loading-javascript-and-stylesheet-only-when-it-is-necessary/
+	add_filter( 'wpcf7_load_js', '__return_false' );
+	add_filter( 'wpcf7_load_css', '__return_false' );
 
 
 //OLD STUFF BELOW
 
 
 	// Load jQuery
-	if ( !function_exists( 'core_mods' ) ) {
-		function core_mods() {
-			if ( !is_admin() ) {
-				wp_deregister_script( 'jquery' );
-				wp_register_script( 'jquery', ( "http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ), false);
-				wp_enqueue_script( 'jquery' );
-			}
-		}
-		add_action( 'wp_enqueue_scripts', 'core_mods' );
-	}
+	// if ( !function_exists( 'core_mods' ) ) {
+	// 	function core_mods() {
+	// 		if ( !is_admin() ) {
+	// 			wp_deregister_script( 'jquery' );
+	// 			wp_register_script( 'jquery', ( "http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js" ), false);
+	// 			wp_enqueue_script( 'jquery' );
+	// 		}
+	// 	}
+	// 	add_action( 'wp_enqueue_scripts', 'core_mods' );
+	// }
 
 	// Clean up the <head>, if you so desire.
 	//	function removeHeadLinks() {
@@ -133,7 +135,7 @@
 			esc_attr( get_the_author() )
 		);
 	}
-	
+
 	/*Add Events Post Type*/
 	register_post_type('events', array(
 		'labels' => array(
@@ -154,7 +156,7 @@
 		'taxonomies' => array('post_tag','category'),
 		'supports' => array('title', 'tags', 'editor', 'thumbnail','custom-fields')
 	));
-	
+
 		/*Add Shops Post Type*/
 	register_post_type('shops', array(
 		'labels' => array(
@@ -195,7 +197,7 @@
 		'query_var' => false,
 		'taxonomies' => array('post_tag','category'),
 		'supports' => array('title', 'tags', 'editor', 'thumbnail','custom-fields')
-	));	
+	));
 
 
 ?>
