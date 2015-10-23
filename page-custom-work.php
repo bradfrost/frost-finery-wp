@@ -15,7 +15,18 @@
 				<a href="/contact/#custom-order" class="btn">Request A Custom Order</a>
 			</div>
 		</div>
-		<hr class="hr-short" />
+		<hr class="hr-simple" />	
+		<!-- Start Testimonials -->
+		<div class="testimonial-section">
+		<?php if( have_rows('testimonial_content') ): ?>
+				<ul class="testimonial-list">
+					<?php while ( have_rows('testimonial_content') ) : the_row();
+					 include (TEMPLATEPATH . '/includes/block-testimonial.php');
+					 endwhile; ?>
+				</ul>
+		<?php endif; ?>
+	</div>
+		<hr class="hr-simple" />
 		
 	<!-- Start Custom Work Images -->
 		<?php
@@ -36,8 +47,12 @@
 				</div>
 				<?php endif;
 		 endforeach; ?>
-	</div>	
+	</div>
+	<?php wp_reset_query(); ?>
+		
 	<!-- End Custom Work Images -->
 	<?php endwhile; endif; ?>
+	
+	
 
 <?php get_footer(); ?>
