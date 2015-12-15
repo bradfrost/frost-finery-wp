@@ -1,4 +1,5 @@
 <?php /* Template Name: Collections */ ?>
+<?php include (TEMPLATEPATH . '/includes/block-christmas.php');  ?>
 <?php get_header(); ?>
 <main role="main">
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
