@@ -23,6 +23,32 @@
 	
 	<hr class="hr-short" />
 	
+<!-- Start Accessories -->
+<?php
+		$title = get_field('accessories_title');
+		$excerpt = get_field('accessories_excerpt');
+		$override = true;	
+	?>
+	
+	<?php include (TEMPLATEPATH . '/includes/block-hero.php');  
+		$args = array( 'numberposts' => -1, 'post_type' => 'jewelry', 'orderby' => 'menu_order',
+    'order' => 'ASC' );
+        $myposts = get_posts( $args ); ?>
+	<div class="g g-max4 collection-list">
+		 <?php foreach ( $myposts as $post ) : setup_postdata( $post ); ?>
+			 <?php if (get_field('section') === "accessories" ): ?>
+				<div class="gi">
+					<?php include (TEMPLATEPATH . '/includes/block-jewelry.php'); ?>
+				</div>
+			<?php endif;
+		endforeach; ?>
+	</div>
+<!-- End Accessories -->
+
+<?php wp_reset_query(); ?>
+	
+	<hr class="hr-short" />	
+	
 <!-- Start Archives -->	
 	<?php
 		$title = get_field('archive_title');
