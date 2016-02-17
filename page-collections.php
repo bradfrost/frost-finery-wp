@@ -49,7 +49,7 @@
 	
 	<hr class="hr-short" />	
 	
-<!-- Start Archives -->	
+<!-- Start Archivess -->	
 	<?php
 		$title = get_field('archive_title');
 		$excerpt = get_field('archive_excerpt');
