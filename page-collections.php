@@ -23,7 +23,10 @@
 		 endforeach; ?>
 	</div>	
 <!--End Seasonal Collection-->
-	<?php wp_reset_query(); ?>		
+	<?php wp_reset_query(); ?>
+	
+<hr class="hr-short" />
+		
 		
 <!--Start Collection-->
 	<?php
