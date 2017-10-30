@@ -10,7 +10,7 @@
 	?>
 	<a href="<?php the_field('hero_link'); ?>" class="b-inner">
 	<?php endif; ?>
-		<div class="b-text">
+		<div class="b-text" <?php if ( is_page_template( 'page-collections.php' )){ ?>id="<?php echo $fieldObject['name'] ?>" <?php } ?>>
 			<h1 class="b-title"><?php echo $title; ?></h1>
 			<p class="b-excerpt"><?php echo $excerpt; ?></p>
 		</div>

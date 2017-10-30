@@ -2,11 +2,33 @@
 <?php get_header(); ?>
 	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
+	<nav class="c-local-nav">
+		<ul class="c-local-nav__list">
+			<li class="c-local-nav__item">
+				<a href="#minimalist_title" class="c-local-nav__link">Minimalist</a>
+			</li>
+			<li class="c-local-nav__item">
+				<a href="#organic_title" class="c-local-nav__link">Organic</a>
+			</li>
+			<li class="c-local-nav__item">
+				<a href="#pittsburgh_local_title" class="c-local-nav__link">Pittsburgh Local</a>
+			</li>
+			<li class="c-local-nav__item">
+				<a href="#home_title" class="c-local-nav__link">Home</a>
+			</li>
+			<li class="c-local-nav__item">
+				<a href="#archive_title" class="c-local-nav__link">Archives</a>
+			</li>
+		</ul>
+	</nav>
+
 	<!-- Start Minimalist-->
 	<?php
 			$title = get_field('minimalist_title');
 			$excerpt = get_field('minimalist_excerpt');
+			$fieldObject = get_field_object('minimalist_title');
 			$override = true;
+
 		?>
 
 		<?php include (TEMPLATEPATH . '/includes/block-hero.php');
@@ -32,6 +54,7 @@
 <?php
 		$title = get_field('organic_title');
 		$excerpt = get_field('organic_excerpt');
+		$fieldObject = get_field_object('organic_title');
 		$override = true;
 	?>
 
@@ -58,6 +81,7 @@
 <?php
 		$title = get_field('pittsburgh_local_title');
 		$excerpt = get_field('pittsburgh_local_excerpt');
+		$fieldObject = get_field_object('pittsburgh_local_title');
 		$override = true;
 	?>
 
@@ -84,6 +108,7 @@
 <?php
 		$title = get_field('home_title');
 		$excerpt = get_field('home_excerpt');
+		$fieldObject = get_field_object('home_title');
 		$override = true;
 	?>
 
@@ -110,6 +135,7 @@
 	<?php
 		$title = get_field('archive_title');
 		$excerpt = get_field('archive_excerpt');
+		$fieldObject = get_field_object('archive_title');
 		$override = true;
 	?>
 
