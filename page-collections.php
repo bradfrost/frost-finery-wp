@@ -14,7 +14,7 @@
 				<a href="#pittsburgh_local_title" class="c-local-nav__link">Pittsburgh Local</a>
 			</li>
 			<li class="c-local-nav__item">
-				<a href="#home_title" class="c-local-nav__link">Home</a>
+				<a href="#home_title" class="c-local-nav__link">Home & Living</a>
 			</li>
 			<li class="c-local-nav__item">
 				<a href="#archive_title" class="c-local-nav__link">Archives</a>
