@@ -16,11 +16,10 @@
 			<li class="c-local-nav__item">
 				<a href="#home_title" class="c-local-nav__link">Home & Living</a>
 			</li>
-			<li class="c-local-nav__item">
-				<a href="#archive_title" class="c-local-nav__link">Archives</a>
-			</li>
 		</ul>
 	</nav>
+
+	<hr class="hr-short" />
 
 	<!-- Start Minimalist-->
 	<?php
