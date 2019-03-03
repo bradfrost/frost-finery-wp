@@ -13,7 +13,6 @@
 				<div class="text">
 				<?php the_field('page_content'); ?>
 				</div>
-				<a href="#custom-order" class="btn">Request A Custom Order</a>
 			</div>
 		</div>
 		
